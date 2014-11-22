@@ -46,7 +46,7 @@ hbs.registerHelper("equal", require("handlebars-helper-equal"))
 app.get("/", function(req, res) {
   res.render("index", {
     content: content,
-    recentlyUpdatedPages: [],
+    recentlyUpdatedPages: sortBy(content.pages, 'modified').slice(0, 12).reverse(),
     pageId: "index"
   })
 })

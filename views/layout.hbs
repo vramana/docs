@@ -46,6 +46,7 @@
   {{{body}}}
 
   <div class="toc">
+
     {{#each content.sections}}
       {{#if pages.length}}
         <section id="{{id}}">
@@ -70,11 +71,28 @@
         </section>
       {{/if}}
     {{/each}}
-    <section id="viewAll">
+
+    <section id="#recently-updated">
+      <h2>
+        Recently Updated
+      </h2>
+      <ul class="pageColumns">
+        {{#each recentlyUpdatedPages}}
+        <li>
+          <a href="{{href}}">{{#if displayOrder}}{{order}} - {{/if}}{{title}}</a>
+          {{#if heading}}<span class="faint heading">{{heading}}</span>{{/if}}
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+
+
+    <section id="view-all">
       <h2 title="View All">
           <a href="/all">View All On One Page</a>
       </h2>
     </section>
+
   </div>
 
   <footer>

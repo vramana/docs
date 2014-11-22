@@ -34,6 +34,11 @@ lite.pages = lite.pages.map(function(page){
   return page
 })
 
+var swath = {
+  // featured: content.pages.filter(function(page) { return page.featured }),
+  recent: sortBy(content.pages, 'modified').slice(0, 12).reverse()
+}
+
 // Configure Express
 var app = module.exports = express()
 app.set("view engine", "hbs")
@@ -46,7 +51,7 @@ hbs.registerHelper("equal", require("handlebars-helper-equal"))
 app.get("/", function(req, res) {
   res.render("index", {
     content: content,
-    recentlyUpdatedPages: sortBy(content.pages, 'modified').slice(0, 12).reverse(),
+    swath: swath,
     pageId: "index"
   })
 })

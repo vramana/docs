@@ -47,6 +47,20 @@
 
   <div class="toc">
 
+    {{#if swath.featured}}
+      <section>
+        <h2>Featured Content</h2>
+        <ul class="pageColumns">
+          {{#each swath.featured}}
+            <li>
+              <a href="{{href}}">{{title}}</a>
+              {{#if heading}}<span class="faint heading">{{heading}}</span>{{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+    {{/if}}
+
     {{#each content.sections}}
       {{#if pages.length}}
         <section id="{{id}}">
@@ -72,19 +86,21 @@
       {{/if}}
     {{/each}}
 
-    <section id="#recently-updated">
-      <h2>
-        Recently Updated
-      </h2>
-      <ul class="pageColumns">
-        {{#each recentlyUpdatedPages}}
-        <li>
-          <a href="{{href}}">{{#if displayOrder}}{{order}} - {{/if}}{{title}}</a>
-          {{#if heading}}<span class="faint heading">{{heading}}</span>{{/if}}
-        </li>
-        {{/each}}
-      </ul>
-    </section>
+    {{#if swath.recent}}
+      <section id="#recently-updated">
+        <h2>
+          Recently Updated
+        </h2>
+        <ul class="pageColumns">
+          {{#each swath.recent}}
+          <li>
+            <a href="{{href}}">{{#if displayOrder}}{{order}} - {{/if}}{{title}}</a>
+            {{#if heading}}<span class="faint heading">{{heading}}</span>{{/if}}
+          </li>
+          {{/each}}
+        </ul>
+      </section>
+    {{/if}}
 
 
     <section id="view-all">

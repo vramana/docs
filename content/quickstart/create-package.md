@@ -18,7 +18,7 @@ These are the questions that you will be asked. You can just press enter for all
 of these questions to accept the default.
 ```sh
 Press ^C at any time to quit.
-name: (npm-quickstart)
+name: (@linclark/npm-quickstart)
 version: (1.0.0)
 description:
 entry point: (index.js)
@@ -35,3 +35,10 @@ accept this.
 <div class="test">
 Test: You should now have a `package.json` file in your directory.
 </div>
+
+<a class="btn btn-lg btn-default" href="#" data-toggle="modal" data-target="#js-report-problem-modal">
+Report a problem
+</a>
+<a class="btn btn-lg btn-primary js-button js-complete">
+I have a package.json file
+</a>

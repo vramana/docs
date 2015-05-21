@@ -12,9 +12,9 @@ allow everyone access to everything.
 In order to do so, set the following settings in
 [`/etc/npme/service.json`](/enterprise/server-configuration):
 
-  * `args.--authentication-method` and `args.--authorization-method`
+  * `args["--authentication-method"]` and `args["--authorization-method"]`
 to `"fake"`
-  * `args.--session-handler` to `"redis"`
+  * `args["--session-handler"]` to `"redis"`
 
 Make sure to regenerate scripts as described in
 [Customizing server configuration](/enterprise/server-configuration).

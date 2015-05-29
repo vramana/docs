@@ -16,6 +16,20 @@ In order to do so, set the following settings in
 to `"fake"`
   * `args.--session-handler` to `"redis"`
 
+Like this:
+
+```json
+{
+  "args": {
+    "--authentication-method": "fake",
+    "--authorization-method": "fake",
+    "--session-handler": "redis"
+    ...
+  }
+  ...
+}
+```
+
 Make sure to regenerate scripts as described in
 [Customizing server configuration](/enterprise/server-configuration).
 

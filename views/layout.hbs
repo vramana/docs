@@ -12,8 +12,6 @@
   <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic|Source+Code+Pro:400,600,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="/styles/index.css">
   <link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon" />
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="/js/main.js"></script>
 
 </head>
 
@@ -32,7 +30,7 @@
       <section {{#equal id ../page.section}}class="active"{{/equal}}>
 
         <h2 title="{{title}}">
-          <a href="#">{{title}}</a>
+          <a href="#{{id}}">{{title}}</a>
         </h2>
 
         <div class="pages">
@@ -57,7 +55,7 @@
               {{#if href}}
                 <a href="{{href}}">{{title}}</a>
               {{else}}
-                {{title}}
+                <a href="#{{id}}">{{title}}</a>
               {{/if}}
             </h2>
 
@@ -103,6 +101,9 @@
       </p>
     </div>
   </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/js/main.js"></script>
 
   <script>
     (function(i, s, o, g, r, a, m) {
